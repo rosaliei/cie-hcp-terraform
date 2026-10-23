@@ -35,3 +35,7 @@ terraform.rc
 # MCP config (contains API tokens)
 .mcp.json
 .claude/settings.local.json
+
+# Saved plan files contain sensitive values
+*.tfplan
+**/.terraform

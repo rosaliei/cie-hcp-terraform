@@ -23,6 +23,16 @@ variable "fe_instance_type" {
   default     = "t3.micro"
 }
 
+variable "fe_public_key" {
+  description = "Public half of the frontend SSH key (OpenSSH format). Not a secret: set it as a normal HCP workspace variable."
+  type        = string
+}
+
+variable "fe_private_key_secret_id" {
+  description = "Secrets Manager secret that holds the private half of the frontend SSH key."
+  default     = "/frontend/ssh/private-key"
+}
+
 #############################################################
 # App Variables
 #############################################################

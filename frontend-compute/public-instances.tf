@@ -68,7 +68,7 @@ resource "null_resource" "configure-fe-public-instance01" {
     connection {
       type        = "ssh"
       user        = "ec2-user"
-      private_key = tls_private_key.fe_keypair.private_key_pem
+      private_key = ephemeral.aws_secretsmanager_secret_version.fe_private_key.secret_string
       host        = aws_eip.frontend_public_instance_eip.public_ip
     }
   }
@@ -100,7 +100,7 @@ resource "null_resource" "configure-fe-public-instance01" {
     connection {
       type        = "ssh"
       user        = "ec2-user"
-      private_key = tls_private_key.fe_keypair.private_key_pem
+      private_key = ephemeral.aws_secretsmanager_secret_version.fe_private_key.secret_string
       host        = aws_eip.frontend_public_instance_eip.public_ip
     }
   }

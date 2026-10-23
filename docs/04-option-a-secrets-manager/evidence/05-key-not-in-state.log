@@ -1,0 +1,20 @@
+$ terraform state pull | python3 keyinstate.py
+(no output = no private key anywhere in state)
+
+$ terraform state pull | grep -c "PRIVATE KEY"
+0
+
+$ terraform state list
+data.aws_ami.fe_private_instance_ami
+data.aws_ami.fe_public_instance_ami
+data.terraform_remote_state.network
+data.terraform_remote_state.security
+aws_eip.frontend_public_instance_eip
+aws_eip_association.fe_public_instance_eip_assoc
+aws_instance.frontend_private_instance01
+aws_instance.frontend_private_instance02
+aws_instance.frontend_private_instance03
+aws_instance.frontend_public_instance01
+aws_key_pair.fe_keypair
+null_resource.configure-fe-private-instance01
+null_resource.configure-fe-public-instance01

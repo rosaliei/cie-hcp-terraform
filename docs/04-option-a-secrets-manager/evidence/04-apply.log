@@ -1,0 +1,99 @@
+Running apply in HCP Terraform. Output will stream here. Pressing Ctrl-C
+will stop streaming the logs, but will not stop the apply running remotely.
+
+Preparing the remote apply...
+To view this run in a browser, visit:
+https://app.terraform.io/app/kst-cie/frontend-compute/runs/run-xxuGBSqnMfQD7dZV
+
+Initializing plugins and modules...
+null_resource.configure-fe-private-instance01: Destroying... [id=2255195313393250739]
+null_resource.configure-fe-public-instance01: Destroying... [id=7652658121867414925]
+null_resource.configure-fe-public-instance01: Destruction complete after 0s
+null_resource.configure-fe-private-instance01: Destruction complete after 0s
+ephemeral.aws_secretsmanager_secret_version.fe_private_key: Opening...
+aws_instance.frontend_private_instance03: Destroying... [id=i-089c95e8006794c08]
+aws_instance.frontend_private_instance02: Destroying... [id=i-02abf027656bfbac2]
+aws_eip_association.fe_public_instance_eip_assoc: Destroying... [id=eipassoc-061e6e4bf216cf708]
+aws_instance.frontend_private_instance01: Destroying... [id=i-0889af7338e3831b3]
+ephemeral.aws_secretsmanager_secret_version.fe_private_key: Opening complete after 0s
+aws_eip_association.fe_public_instance_eip_assoc: Destruction complete after 2s
+aws_instance.frontend_public_instance01: Destroying... [id=i-06ea5da59468be4da]
+aws_instance.frontend_private_instance02: Still destroying... [10s elapsed]
+aws_instance.frontend_private_instance03: Still destroying... [10s elapsed]
+aws_instance.frontend_private_instance01: Still destroying... [10s elapsed]
+aws_instance.frontend_public_instance01: Still destroying... [10s elapsed]
+aws_instance.frontend_private_instance03: Still destroying... [20s elapsed]
+aws_instance.frontend_private_instance02: Still destroying... [20s elapsed]
+aws_instance.frontend_private_instance01: Still destroying... [20s elapsed]
+aws_instance.frontend_private_instance03: Destruction complete after 21s
+aws_instance.frontend_public_instance01: Still destroying... [20s elapsed]
+aws_instance.frontend_private_instance02: Still destroying... [30s elapsed]
+aws_instance.frontend_private_instance01: Still destroying... [30s elapsed]
+aws_instance.frontend_private_instance01: Destruction complete after 31s
+aws_instance.frontend_private_instance02: Destruction complete after 31s
+aws_instance.frontend_public_instance01: Still destroying... [30s elapsed]
+aws_instance.frontend_public_instance01: Destruction complete after 31s
+aws_key_pair.fe_keypair: Destroying... [id=frontend-ssh-key.pem]
+aws_key_pair.fe_keypair: Destruction complete after 0s
+tls_private_key.fe_keypair: Destroying... [id=d0f90b97335ad1d329313f1b2c9df254b139333e]
+tls_private_key.fe_keypair: Destruction complete after 0s
+aws_key_pair.fe_keypair: Creating...
+aws_key_pair.fe_keypair: Creation complete after 1s [id=frontend-ssh-key-a]
+aws_instance.frontend_private_instance01: Creating...
+aws_instance.frontend_public_instance01: Creating...
+aws_instance.frontend_private_instance03: Creating...
+aws_instance.frontend_private_instance02: Creating...
+aws_instance.frontend_public_instance01: Still creating... [10s elapsed]
+aws_instance.frontend_private_instance01: Still creating... [10s elapsed]
+aws_instance.frontend_private_instance03: Still creating... [10s elapsed]
+aws_instance.frontend_private_instance02: Still creating... [10s elapsed]
+aws_instance.frontend_private_instance02: Creation complete after 14s [id=i-0a52fb97cf3c57e68]
+aws_instance.frontend_private_instance01: Creation complete after 14s [id=i-0dbdde98351a6d24d]
+aws_instance.frontend_public_instance01: Creation complete after 15s [id=i-01a225715f721bdb9]
+aws_eip_association.fe_public_instance_eip_assoc: Creating...
+aws_instance.frontend_private_instance03: Creation complete after 15s [id=i-0505e995098b7815a]
+aws_eip_association.fe_public_instance_eip_assoc: Creation complete after 1s [id=eipassoc-0d6c539777a2a4895]
+null_resource.configure-fe-public-instance01: Creating...
+null_resource.configure-fe-private-instance01: Creating...
+null_resource.configure-fe-public-instance01: Provisioning with 'file'...
+null_resource.configure-fe-private-instance01: Provisioning with 'file'...
+null_resource.configure-fe-public-instance01: Provisioning with 'remote-exec'...
+null_resource.configure-fe-public-instance01: (remote-exec): Connecting to remote host via SSH...
+null_resource.configure-fe-public-instance01: (remote-exec):   Host: 47.130.x.x
+null_resource.configure-fe-public-instance01: (remote-exec):   User: ec2-user
+null_resource.configure-fe-public-instance01: (remote-exec):   Password: false
+null_resource.configure-fe-public-instance01: (remote-exec):   Private key: true
+null_resource.configure-fe-public-instance01: (remote-exec):   Certificate: false
+... (provisioner output trimmed) ...
+null_resource.configure-fe-private-instance01: Provisioning with 'remote-exec'...
+null_resource.configure-fe-private-instance01: Still creating... [10s elapsed]
+null_resource.configure-fe-public-instance01: Still creating... [10s elapsed]
+null_resource.configure-fe-private-instance01: Still creating... [20s elapsed]
+null_resource.configure-fe-public-instance01: Still creating... [20s elapsed]
+null_resource.configure-fe-public-instance01: Creation complete after 25s [id=6761805817341868196]
+null_resource.configure-fe-private-instance01: Still creating... [30s elapsed]
+null_resource.configure-fe-private-instance01: Still creating... [40s elapsed]
+null_resource.configure-fe-private-instance01: Creation complete after 50s [id=6229756036310545434]
+ephemeral.aws_secretsmanager_secret_version.fe_private_key: Closing...
+ephemeral.aws_secretsmanager_secret_version.fe_private_key: Closing complete after 0s
+
+Apply complete! Resources: 8 added, 0 changed, 9 destroyed.
+
+Outputs:
+frontend_private_instance01_id = "i-0dbdde98351a6d24d"
+frontend_private_instance02_id = "i-0a52fb97cf3c57e68"
+frontend_private_instance03_id = "i-0505e995098b7815a"
+frontend_private_instance_ids = [
+        "i-0dbdde98351a6d24d",
+        "i-0a52fb97cf3c57e68",
+        "i-0505e995098b7815a",
+    ]
+frontend_private_instance_ips = [
+        "10.0.253.179",
+        "10.0.254.237",
+        "10.0.255.124",
+    ]
+frontend_private_instance01_ip = "10.0.253.179"
+frontend_private_instance02_ip = "10.0.254.237"
+frontend_private_instance03_ip = "10.0.255.124"
+fe_key_name = "frontend-ssh-key-a"

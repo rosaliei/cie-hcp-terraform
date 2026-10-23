@@ -1,0 +1,19 @@
+$ aws secretsmanager get-secret-value --secret-id /frontend/ssh/private-key --query SecretString --output text > /tmp/fe-key && chmod 400 /tmp/fe-key
+-----BEGIN OPENSSH PRIVATE KEY-----
+
+$ ssh -i /tmp/fe-key ec2-user@<public-ip> "hostname; whoami; cat ~/.ssh/authorized_keys | cut -d\" \" -f3"
+ip-10-0-1-247.ap-southeast-1.compute.internal
+ec2-user
+frontend-ssh-key-a
+
+$ chmod 600 /tmp/fe-key && rm -P /tmp/fe-key     # use it, then remove it (rm -P needs write permission)
+removed
+
+$ aws secretsmanager describe-secret --secret-id /frontend/ssh/private-key   (who/when is audited by CloudTrail)
+----------------------------------------------------------
+|                     DescribeSecret                     |
++-------------------+------------------------------------+
+|  LastAccessedDate |  2026-10-23T04:00:00+04:00         |
+|  LastChangedDate  |  2026-10-23T15:57:40.403000+04:00  |
+|  Name             |  /frontend/ssh/private-key         |
++-------------------+------------------------------------+

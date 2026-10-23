@@ -1,0 +1,5 @@
+$ HCP API: POST /workspaces/ws-hvd1kBWT9SrifxUm/vars   (key=fe_public_key, category=terraform, sensitive=false)
+{'key': 'fe_public_key', 'category': 'terraform', 'sensitive': False}
+
+$ rm -P frontend-key-a      # private key no longer on the laptop; Secrets Manager is the only copy
+frontend-key-a.pub

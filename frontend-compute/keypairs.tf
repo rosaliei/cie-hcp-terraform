@@ -1,20 +1,16 @@
 locals {
-  fe_private_key_filename = "${var.frontend_prefix}-ssh-key.pem"
-}
-
-resource "tls_private_key" "fe_keypair" {
-  algorithm = "ED25519"
+  # Option A: the key pair is created outside Terraform (ssh-keygen).
+  # Terraform only gets the PUBLIC half; the PRIVATE half lives in Secrets Manager.
+  fe_key_name = "${var.frontend_prefix}-ssh-key-a"
 }
 
 resource "aws_key_pair" "fe_keypair" {
-  key_name   = local.fe_private_key_filename
-  public_key = tls_private_key.fe_keypair.public_key_openssh
+  key_name   = local.fe_key_name
+  public_key = var.fe_public_key
 }
 
-# Automatically save the private key locally for frontend instances
-resource "local_file" "fe_private_key_pem" {
-  content  = tls_private_key.fe_keypair.private_key_pem
-  filename = "${path.module}/${local.fe_private_key_filename}"
-  # file_permission      = "0400" # Secure file permissions required for SSH keys
-  # directory_permission = "0700"
+# Read the private key for the provisioners' connection blocks without ever
+# persisting it to plan or state (ephemeral resources need Terraform >= 1.10)
+ephemeral "aws_secretsmanager_secret_version" "fe_private_key" {
+  secret_id = var.fe_private_key_secret_id
 }

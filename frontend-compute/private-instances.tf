@@ -52,10 +52,10 @@ resource "null_resource" "configure-fe-private-instance01" {
       type                = "ssh"
       user                = "ubuntu"
       host                = aws_instance.frontend_private_instance01.private_ip
-      private_key         = tls_private_key.fe_keypair.private_key_pem
+      private_key         = ephemeral.aws_secretsmanager_secret_version.fe_private_key.secret_string
       bastion_host        = aws_eip.frontend_public_instance_eip.public_ip
       bastion_user        = "ec2-user"
-      bastion_private_key = tls_private_key.fe_keypair.private_key_pem
+      bastion_private_key = ephemeral.aws_secretsmanager_secret_version.fe_private_key.secret_string
     }
   }
   /* Remote-Exec Is Not Idempotent
@@ -93,10 +93,10 @@ resource "null_resource" "configure-fe-private-instance01" {
       type                = "ssh"
       user                = "ubuntu"
       host                = aws_instance.frontend_private_instance01.private_ip
-      private_key         = tls_private_key.fe_keypair.private_key_pem
+      private_key         = ephemeral.aws_secretsmanager_secret_version.fe_private_key.secret_string
       bastion_host        = aws_eip.frontend_public_instance_eip.public_ip
       bastion_user        = "ec2-user"
-      bastion_private_key = tls_private_key.fe_keypair.private_key_pem
+      bastion_private_key = ephemeral.aws_secretsmanager_secret_version.fe_private_key.secret_string
     }
   }
 }

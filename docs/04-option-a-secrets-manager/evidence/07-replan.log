@@ -1,0 +1,67 @@
+Running plan in HCP Terraform. Output will stream here. Pressing Ctrl-C
+will stop streaming the logs, but will not stop the plan running remotely.
+
+Preparing the remote plan...
+
+To view this run in a browser, visit:
+https://app.terraform.io/app/kst-cie/frontend-compute/runs/run-i8iYy8af4Pqd8eGK
+
+Waiting for the plan to start...
+
+Terraform v1.17.0
+on linux_amd64
+
+Initializing plugins and modules...
+data.terraform_remote_state.network: Refreshing...
+data.terraform_remote_state.security: Refreshing...
+data.terraform_remote_state.security: Refresh complete after 0s
+data.terraform_remote_state.network: Refresh complete after 0s
+aws_key_pair.fe_keypair: Refreshing state... [id=frontend-ssh-key-a]
+ephemeral.aws_secretsmanager_secret_version.fe_private_key: Opening...
+data.aws_ami.fe_private_instance_ami: Refreshing...
+aws_eip.frontend_public_instance_eip: Refreshing state... [id=eipalloc-0ded51b1579e1e38e]
+data.aws_ami.fe_public_instance_ami: Refreshing...
+ephemeral.aws_secretsmanager_secret_version.fe_private_key: Opening complete after 1s
+data.aws_ami.fe_private_instance_ami: Refresh complete after 2s [id=ami-0403d346e3210afd6]
+aws_instance.frontend_private_instance01: Refreshing state... [id=i-0dbdde98351a6d24d]
+aws_instance.frontend_private_instance02: Refreshing state... [id=i-0a52fb97cf3c57e68]
+aws_instance.frontend_private_instance03: Refreshing state... [id=i-0505e995098b7815a]
+data.aws_ami.fe_public_instance_ami: Refresh complete after 2s [id=ami-05de8166ca534aef3]
+aws_instance.frontend_public_instance01: Refreshing state... [id=i-01a225715f721bdb9]
+aws_eip_association.fe_public_instance_eip_assoc: Refreshing state... [id=eipassoc-0d6c539777a2a4895]
+null_resource.configure-fe-private-instance01: Refreshing state... [id=6229756036310545434]
+null_resource.configure-fe-public-instance01: Refreshing state... [id=6761805817341868196]
+ephemeral.aws_secretsmanager_secret_version.fe_private_key: Closing...
+ephemeral.aws_secretsmanager_secret_version.fe_private_key: Closing complete after 0s
+aws_eip.frontend_public_instance_eip: Drift detected (update)
+aws_key_pair.fe_keypair: Drift detected (update)
+aws_instance.frontend_public_instance01: Drift detected (update)
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+-/+ destroy and then create replacement
+
+Terraform will perform the following actions:
+
+  # null_resource.configure-fe-private-instance01 must be replaced
+-/+ resource "null_resource" "configure-fe-private-instance01" {
+      ~ id       = "6229756036310545434" -> (known after apply)
+      ~ triggers = { # forces replacement
+          ~ "build_number" = "2026-10-23T12:02:35Z" -> (known after apply)
+        }
+    }
+
+  # null_resource.configure-fe-public-instance01 must be replaced
+-/+ resource "null_resource" "configure-fe-public-instance01" {
+      ~ id       = "6761805817341868196" -> (known after apply)
+      ~ triggers = { # forces replacement
+          ~ "build_number" = "2026-10-23T12:02:35Z" -> (known after apply)
+        }
+    }
+
+Plan: 2 to add, 0 to change, 2 to destroy.
+
+─────────────────────────────────────────────────────────────────────────────
+
+Note: You didn't use the -out option to save this plan, so Terraform can't
+guarantee to take exactly these actions if you run "terraform apply" now.
