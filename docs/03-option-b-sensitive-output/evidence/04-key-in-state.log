@@ -1,0 +1,5 @@
+$ terraform state pull | python3 keyinstate.py     # reports WHERE the key is, never prints it
+tls_private_key.fe_keypair.private_key_openssh: contains a private key (387 chars, plaintext)
+tls_private_key.fe_keypair.private_key_pem: contains a private key (119 chars, plaintext)
+tls_private_key.fe_keypair.private_key_pem_pkcs8: contains a private key (119 chars, plaintext)
+outputs.fe_private_key_openssh: contains a private key, sensitive=True (still plaintext in state)

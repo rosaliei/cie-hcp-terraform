@@ -11,10 +11,7 @@ resource "aws_key_pair" "fe_keypair" {
   public_key = tls_private_key.fe_keypair.public_key_openssh
 }
 
-# Automatically save the private key locally for frontend instances
-resource "local_file" "fe_private_key_pem" {
-  content  = tls_private_key.fe_keypair.private_key_pem
-  filename = "${path.module}/${local.fe_private_key_filename}"
-  # file_permission      = "0400" # Secure file permissions required for SSH keys
-  # directory_permission = "0700"
-}
+# Option B: no local_file. With HCP remote execution it would write the key
+# on the disposable agent. Retrieve it instead with:
+#   terraform output -raw fe_private_key_openssh > frontend-ssh-key.pem && chmod 400 frontend-ssh-key.pem
+# (see outputs.tf)
