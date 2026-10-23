@@ -1,0 +1,35 @@
+$ terraform state list
+data.aws_ami.fe_private_instance_ami
+data.aws_ami.fe_public_instance_ami
+data.terraform_remote_state.network
+data.terraform_remote_state.security
+aws_eip.frontend_public_instance_eip
+aws_eip_association.fe_public_instance_eip_assoc
+aws_instance.frontend_private_instance01
+aws_instance.frontend_private_instance02
+aws_instance.frontend_private_instance03
+aws_instance.frontend_public_instance01
+aws_key_pair.fe_keypair
+local_file.fe_private_key_pem
+null_resource.configure-fe-private-instance01
+null_resource.configure-fe-public-instance01
+tls_private_key.fe_keypair
+
+$ terraform state show local_file.fe_private_key_pem   (content redacted)
+# local_file.fe_private_key_pem:
+resource "local_file" "fe_private_key_pem" {
+    directory_permission = "0777"
+    file_permission      = "0777"
+    filename             = "./frontend-ssh-key.pem"
+    id                   = "b7c80b44e528563c0c86e682f32e2d007390896c"
+}
+
+$ terraform state show aws_key_pair.fe_keypair
+    fingerprint     = "EKNYwdNfmhCMWR1yAhVEdQ2nvOcz3Om5jBHhfb2KF+U="
+    id              = "frontend-ssh-key.pem"
+    key_name        = "frontend-ssh-key.pem"
+    key_name_prefix = null
+    key_pair_id     = "key-0a894de817cea635a"
+
+$ ls -la frontend-compute/*.pem   (on the Mac)
+ls: *.pem: No such file or directory

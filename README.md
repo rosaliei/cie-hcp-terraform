@@ -12,7 +12,7 @@ Each lesson is a branch with its own write-up in `docs/`, real HCP/AWS logs and 
 |---|---|
 | `main` | The lecture code as handed out (starting point) |
 | `01-hcp-migration-troubleshooting` | Move the frontend stack to a new HCP org and fix every error on the way ([docs](docs/01-hcp-migration/README.md)) |
-| `02-local-file-drift` | Why `local_file` can't hand you an SSH key under remote execution |
+| `02-local-file-drift` | Why `local_file` can't hand you an SSH key under remote execution ([docs](docs/02-local-file-drift/README.md)) |
 | `03-option-b-sensitive-output` | Fix B: retrieve the key through a sensitive output |
 | `04-option-a-secrets-manager` | Fix A: pre-created key in Secrets Manager, read ephemerally |
 | `05-option-c-ssm-no-keys` | Fix C: no SSH keys at all, use SSM Session Manager |

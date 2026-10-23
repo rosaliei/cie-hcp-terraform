@@ -1,0 +1,184 @@
+Terraform v1.17.0
+on linux_amd64
+Initializing plugins and modules...
+Terraform 1.17.0
+local_file.fe_private_key_pem: Plan to create
+null_resource.configure-fe-private-instance01: Plan to replace
+null_resource.configure-fe-public-instance01: Plan to replace
+null_resource.configure-fe-public-instance01: Destroying... [id=833834113691164051]
+null_resource.configure-fe-private-instance01: Destroying... [id=1616552312925684484]
+null_resource.configure-fe-private-instance01: Destruction complete after 0s
+null_resource.configure-fe-public-instance01: Destruction complete after 0s
+local_file.fe_private_key_pem: Creating...
+local_file.fe_private_key_pem: Creation complete after 0s [id=b7c80b44e528563c0c86e682f32e2d007390896c]
+null_resource.configure-fe-private-instance01: Creating...
+null_resource.configure-fe-public-instance01: Creating...
+null_resource.configure-fe-private-instance01: Provisioning with 'file'...
+null_resource.configure-fe-public-instance01: Provisioning with 'file'...
+null_resource.configure-fe-public-instance01: (file) Provisioning complete
+null_resource.configure-fe-public-instance01: Provisioning with 'remote-exec'...
+null_resource.configure-fe-public-instance01: (remote-exec): Connecting to remote host via SSH...
+null_resource.configure-fe-public-instance01: (remote-exec):   Host: 47.130.x.x
+null_resource.configure-fe-public-instance01: (remote-exec):   User: ec2-user
+null_resource.configure-fe-public-instance01: (remote-exec):   Password: false
+null_resource.configure-fe-public-instance01: (remote-exec):   Private key: true
+null_resource.configure-fe-public-instance01: (remote-exec):   Certificate: false
+null_resource.configure-fe-public-instance01: (remote-exec):   SSH Agent: false
+null_resource.configure-fe-public-instance01: (remote-exec):   Checking Host Key: false
+null_resource.configure-fe-public-instance01: (remote-exec):   Target Platform: unix
+null_resource.configure-fe-public-instance01: (remote-exec): Connected!
+null_resource.configure-fe-private-instance01: (file) Provisioning complete
+null_resource.configure-fe-private-instance01: Provisioning with 'remote-exec'...
+null_resource.configure-fe-private-instance01: (remote-exec): Connecting to remote host via SSH...
+null_resource.configure-fe-private-instance01: (remote-exec):   Host: 10.0.253.156
+null_resource.configure-fe-private-instance01: (remote-exec):   User: ubuntu
+null_resource.configure-fe-private-instance01: (remote-exec):   Password: false
+null_resource.configure-fe-private-instance01: (remote-exec):   Private key: true
+null_resource.configure-fe-private-instance01: (remote-exec):   Certificate: false
+null_resource.configure-fe-private-instance01: (remote-exec):   SSH Agent: false
+null_resource.configure-fe-private-instance01: (remote-exec):   Checking Host Key: false
+null_resource.configure-fe-private-instance01: (remote-exec):   Target Platform: unix
+null_resource.configure-fe-private-instance01: (remote-exec): Using configured bastion host...
+null_resource.configure-fe-private-instance01: (remote-exec):   Host: 47.130.x.x
+null_resource.configure-fe-private-instance01: (remote-exec):   User: ec2-user
+null_resource.configure-fe-private-instance01: (remote-exec):   Password: false
+null_resource.configure-fe-private-instance01: (remote-exec):   Private key: true
+null_resource.configure-fe-private-instance01: (remote-exec):   Certificate: false
+null_resource.configure-fe-private-instance01: (remote-exec):   SSH Agent: false
+null_resource.configure-fe-private-instance01: (remote-exec):   Checking Host Key: false
+null_resource.configure-fe-public-instance01: (remote-exec): Loaded plugins: extras_suggestions,
+null_resource.configure-fe-public-instance01: (remote-exec):               : langpacks, priorities,
+null_resource.configure-fe-public-instance01: (remote-exec):               : update-motd
+null_resource.configure-fe-public-instance01: (remote-exec): amzn2-core       | 3.6 kB     00:00
+null_resource.configure-fe-public-instance01: (remote-exec): No packages marked for update
+null_resource.configure-fe-public-instance01: (remote-exec): Script complete.
+null_resource.configure-fe-public-instance01: (remote-exec):  __________________
+null_resource.configure-fe-public-instance01: (remote-exec): < Hellooooooooooo! >
+null_resource.configure-fe-public-instance01: (remote-exec):  ------------------
+null_resource.configure-fe-public-instance01: (remote-exec):         \   ^__^
+null_resource.configure-fe-public-instance01: (remote-exec):          \  (oo)\_______
+null_resource.configure-fe-public-instance01: (remote-exec):             (__)\       )\/\
+null_resource.configure-fe-public-instance01: (remote-exec):                 ||----w |
+null_resource.configure-fe-public-instance01: (remote-exec):                 ||     ||
+null_resource.configure-fe-private-instance01: (remote-exec): Connected!
+null_resource.configure-fe-public-instance01: (remote-exec) Provisioning complete
+null_resource.configure-fe-public-instance01: Creation complete after 10s [id=2172052203380753602]
+null_resource.configure-fe-private-instance01: Still creating... [10s elapsed]
+null_resource.configure-fe-private-instance01: (remote-exec): [33m
+null_resource.configure-fe-private-instance01: (remote-exec): 0% [Working][0m
+null_resource.configure-fe-private-instance01: (remote-exec): Hit:1 http://ap-southeast-1.ec2.archive.ubuntu.com/ubuntu noble InRelease
+null_resource.configure-fe-private-instance01: (remote-exec): [33m
+null_resource.configure-fe-private-instance01: (remote-exec): 0% [Connecting to security.ubuntu.com ([0m
+null_resource.configure-fe-private-instance01: (remote-exec): Hit:2 http://ap-southeast-1.ec2.archive.ubuntu.com/ubuntu noble-updates InRelease
+null_resource.configure-fe-private-instance01: (remote-exec): Hit:3 http://ap-southeast-1.ec2.archive.ubuntu.com/ubuntu noble-backports InRelease
+null_resource.configure-fe-private-instance01: (remote-exec): [33m
+null_resource.configure-fe-private-instance01: (remote-exec): 0% [Connecting to security.ubuntu.com ([0m
+null_resource.configure-fe-private-instance01: (remote-exec): [33m
+null_resource.configure-fe-private-instance01: (remote-exec): 0% [Connecting to security.ubuntu.com ([0m[33m
+null_resource.configure-fe-private-instance01: (remote-exec): 0% [Waiting for headers][0m
+null_resource.configure-fe-private-instance01: (remote-exec): Hit:4 http://security.ubuntu.com/ubuntu noble-security InRelease
+null_resource.configure-fe-private-instance01: (remote-exec): [33m
+null_resource.configure-fe-private-instance01: (remote-exec): 0% [Working][0m[33m
+null_resource.configure-fe-private-instance01: (remote-exec): 0% [Working][0m
+null_resource.configure-fe-private-instance01: (remote-exec): [33m
+null_resource.configure-fe-private-instance01: (remote-exec): 20% [Working][0m
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 0%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 0%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 0%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 3%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 3%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 5%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 5%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 22%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 27%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 33%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 38%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 41%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 41%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 43%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 49%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 55%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 56%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 56%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 57%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 57%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 57%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 57%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 57%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 57%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 58%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 58%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 61%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 61%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 62%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 64%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 64%
+null_resource.configure-fe-private-instance01: Still creating... [20s elapsed]
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 68%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 69%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 69%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 71%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 71%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 76%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 76%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 80%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 80%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 80%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 80%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 80%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 80%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 80%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 80%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 80%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 80%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 80%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 80%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 80%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 80%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 80%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 80%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 80%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 80%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 83%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 83%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 85%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 85%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 86%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 89%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 89%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 90%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 90%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 95%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 95%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 99%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 99%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 99%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 99%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 99%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... 99%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading package lists... Done
+null_resource.configure-fe-private-instance01: (remote-exec): Building dependency tree... 0%
+null_resource.configure-fe-private-instance01: (remote-exec): Building dependency tree... 0%
+null_resource.configure-fe-private-instance01: (remote-exec): Building dependency tree... 0%
+null_resource.configure-fe-private-instance01: (remote-exec): Building dependency tree... 50%
+null_resource.configure-fe-private-instance01: (remote-exec): Building dependency tree... 50%
+null_resource.configure-fe-private-instance01: (remote-exec): Building dependency tree... Done
+null_resource.configure-fe-private-instance01: (remote-exec): Reading state information... 0%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading state information... 0%
+null_resource.configure-fe-private-instance01: (remote-exec): Reading state information... Done
+null_resource.configure-fe-private-instance01: (remote-exec): 17 packages can be upgraded. Run 'apt list --upgradable' to see them.
+null_resource.configure-fe-private-instance01: (remote-exec):  __________________
+null_resource.configure-fe-private-instance01: (remote-exec): < Hellooooooooooo! >
+null_resource.configure-fe-private-instance01: (remote-exec):  ------------------
+null_resource.configure-fe-private-instance01: (remote-exec):         \   ^__^
+null_resource.configure-fe-private-instance01: (remote-exec):          \  (oo)\_______
+null_resource.configure-fe-private-instance01: (remote-exec):             (__)\       )\/\
+null_resource.configure-fe-private-instance01: (remote-exec):                 ||----w |
+null_resource.configure-fe-private-instance01: (remote-exec):                 ||     ||
+null_resource.configure-fe-private-instance01: (remote-exec): aws-cli/2.38.5 Python/3.14.8 Linux/7.0.0-1014-aws exe/x86_64.ubuntu.24
+null_resource.configure-fe-private-instance01: (remote-exec): aws-cli/2.38.5 Python/3.14.8 Linux/7.0.0-1014-aws exe/x86_64.ubuntu.24
+null_resource.configure-fe-private-instance01: (remote-exec) Provisioning complete
+null_resource.configure-fe-private-instance01: Creation complete after 28s [id=3807909280839999485]
+Apply complete! Resources: 3 added, 0 changed, 2 destroyed.
+Outputs: 9
+
