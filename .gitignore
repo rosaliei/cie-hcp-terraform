@@ -1,0 +1,34 @@
+# Local .terraform directories
+**/.terraform/
+
+# .tfstate files and backups
+*.tfstate
+*.tfstate.*
+
+# Crash log files
+crash.log
+crash.*.log
+terraform.tfstate.backup
+
+# Exclude all .tfvars files (sensitive data, passwords, secrets)
+*.tfvars
+*.tfvars.json
+
+# Generated SSH Private Keys (DO NOT COMMIT THESE)
+*-ssh-key.pem
+
+# Ignore override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Ignore transient lock info files
+.terraform.tfstate.lock.info
+
+# Ignore CLI configuration files
+.terraformrc
+terraform.rc
+
+# macOS system files
+.DS_Store
