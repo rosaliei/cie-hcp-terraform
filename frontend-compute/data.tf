@@ -8,9 +8,9 @@ data "terraform_remote_state" "network" {
   #   path = "${path.module}/../frontend-network/terraform.tfstate"
   # }
   config = {
-    organization = "HelloCloud_learning"
+    organization = "kst-cie"
     workspaces = {
-      name = "frontend-network-ws"
+      name = "frontend-network"
     }
   }
 }
@@ -24,9 +24,9 @@ data "terraform_remote_state" "security" {
   # }
 
   config = {
-    organization = "HelloCloud_learning"
+    organization = "kst-cie"
     workspaces = {
-      name = "frontend-security-ws"
+      name = "frontend-security"
     }
   }
 }

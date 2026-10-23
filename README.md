@@ -4,6 +4,27 @@ This repository contains a refactored multi-folder Terraform project split into 
 
 ---
 
+## 📚 Lessons (one branch each)
+
+Each lesson is a branch with its own write-up in `docs/`, real HCP/AWS logs and screenshots, and a matching Excalidraw drawing.
+
+| Branch | Lesson |
+|---|---|
+| `main` | The lecture code as handed out (starting point) |
+| `01-hcp-migration-troubleshooting` | Move the frontend stack to a new HCP org and fix every error on the way ([docs](docs/01-hcp-migration/README.md)) |
+| `02-local-file-drift` | Why `local_file` can't hand you an SSH key under remote execution |
+| `03-option-b-sensitive-output` | Fix B: retrieve the key through a sensitive output |
+| `04-option-a-secrets-manager` | Fix A: pre-created key in Secrets Manager, read ephemerally |
+| `05-option-c-ssm-no-keys` | Fix C: no SSH keys at all, use SSM Session Manager |
+| `06-enterprise-practices` | Production hardening: OIDC credentials, secrets out of state, no provisioners |
+
+```bash
+git switch 01-hcp-migration-troubleshooting     # start here
+git diff main 01-hcp-migration-troubleshooting   # see exactly what the lesson changed
+```
+
+---
+
 ## 🏗️ Project Architecture & Deployment Order
 
 Because modules depend on each other's outputs (e.g., VPC peering requires backend network outputs, security groups need VPC IDs, and compute instances need subnets and security groups), you **must apply and destroy them in a strict sequence**.

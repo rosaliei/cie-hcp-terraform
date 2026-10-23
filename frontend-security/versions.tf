@@ -10,10 +10,10 @@ terraform {
 
   # Connect to your HCP Terraform Organization and specific workspace
   cloud {
-    organization = "HelloCloud_learning"
+    organization = "kst-cie"
 
     workspaces {
-      name = "frontend-security-ws" # Match this to the exact workspace name for each folder!
+      name = "frontend-security" # Match this to the exact workspace name for each folder!
     }
   }
 }

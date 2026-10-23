@@ -32,3 +32,6 @@ terraform.rc
 
 # macOS system files
 .DS_Store
+# MCP config (contains API tokens)
+.mcp.json
+.claude/settings.local.json
